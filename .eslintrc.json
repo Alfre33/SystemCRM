@@ -1,7 +1,0 @@
- {
-  "extends": ["eslint:recommended", "plugin:react/recommended", "prettier"],
-  "plugins": ["react-hooks"],
-  "rules": {
-    "react/react-in-jsx-scope": "off"
-  }
-}
