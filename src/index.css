@@ -1,3 +1,5 @@
+@import 'tailwindcss';
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -64,5 +66,44 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+
+/* 1. Definir colores personalizados primero */
+@theme {
+  --color-brand-primary: #3b82f6;
+  --color-brand-surface: #fff7ed;
+  --color-brand-ink: #0f172a;
+
+  /* Agregar sombras personalizadas */
+  --shadow-cartoon: 6px 6px 0 0 rgba(15, 23, 42, 0.25);
+
+  /* Agregar ancho de borde personalizado */
+  --width-3: 3px;
+}
+
+/* 2. Estilos base */
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+  body {
+    @apply bg-brand-surface text-brand-ink;
+  }
+}
+
+/* 3. Componentes personalizados */
+@layer components {
+  .card {
+    @apply bg-white rounded-2xl border-3 border-black/10 shadow-cartoon p-5;
+  }
+  .btn {
+    @apply inline-flex items-center gap-2 rounded-xl border-3 border-black/10 shadow-cartoon px-4 py-2 font-medium bg-brand-primary text-white active:translate-y-0.5;
+  }
+  .input {
+    @apply rounded-xl border-3 border-black/10 px-3 py-2 outline-none focus:ring-2 focus:ring-brand-primary;
+  }
+  .navlink {
+    @apply px-3 py-2 rounded-xl border-3 border-black/0 hover:border-black/10 hover:shadow-cartoon;
   }
 }

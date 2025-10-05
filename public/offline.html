@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#3B82F6" />
+    <title>PomoDash · Sin conexión</title>
+    <style>
+      :root {
+        --bg: #fff7ed; /* surface pastel */
+        --ink: #0f172a; /* tinta */
+        --primary: #3b82f6; /* azul brand */
+        --shadow: rgba(15, 23, 42, 0.25);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        padding: 24px;
+        background: var(--bg);
+        color: var(--ink);
+        font:
+          16px/1.5 system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          Inter,
+          sans-serif;
+        display: grid;
+        place-items: center;
+      }
+      .wrap {
+        width: min(720px, 100%);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 16px;
+        opacity: 0.85;
+      }
+      .brand b {
+        font-weight: 900;
+      }
+
+      .card {
+        background: #fff;
+        border-radius: 20px;
+        border: 3px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 6px 6px 0 0 var(--shadow);
+        padding: 22px;
+      }
+      h1 {
+        margin: 0 0 0.25rem 0;
+        font-size: clamp(26px, 4.2vw, 36px);
+        font-weight: 900;
+        letter-spacing: 0.2px;
+      }
+      p {
+        margin: 0.25rem 0 1rem 0;
+        opacity: 0.9;
+      }
+
+      .row {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--primary);
+        color: #fff;
+        font-weight: 600;
+        border-radius: 14px;
+        padding: 0.6rem 1rem;
+        border: 3px solid rgba(0, 0, 0, 0.12);
+        box-shadow: 6px 6px 0 0 var(--shadow);
+        text-decoration: none;
+        transform: translateY(0);
+        transition: transform 0.05s ease;
+      }
+      .btn:active {
+        transform: translateY(2px);
+      }
+      .ghost {
+        background: #fff;
+        color: var(--ink);
+      }
+
+      .tag {
+        display: inline-block;
+        background: #f1f5f9;
+        border: 3px solid rgba(0, 0, 0, 0.08);
+        border-radius: 12px;
+        padding: 0.25rem 0.6rem;
+        font-size: 0.85rem;
+      }
+
+      footer {
+        margin-top: 18px;
+        text-align: center;
+        opacity: 0.7;
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="brand">🍅 <b>PomoDash</b></div>
+      <section class="card" role="status" aria-live="polite">
+        <h1>Sin conexión</h1>
+        <p>
+          Puedes seguir usando la app básica. Cuando vuelvas a estar en línea,
+          se sincronizará.
+        </p>
+        <div class="row">
+          <a class="btn" href="/" rel="noopener">Volver al inicio</a>
+          <button class="btn ghost" onclick="location.reload()">
+            Reintentar
+          </button>
+        </div>
+        <div style="margin-top: 12px">
+          <span class="tag">PWA offline</span>
+        </div>
+      </section>
+      <footer>Offline-first • PWA • Vite + React</footer>
+    </div>
+  </body>
+</html>
